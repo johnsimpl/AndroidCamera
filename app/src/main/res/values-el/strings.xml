@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Camshare</string>
+    <string name="action_settings">Ρυθμίσεις</string>
+    <string name="auto_flash">flash auto</string>
+    <string name="flash_on">flash on</string>
+    <string name="flash_off">flash off</string>
+    <string name="front_cam">front camera</string>
+    <string name="back_cam">back camera</string>
+    <string name="auto_focus">auto focus on</string>
+    <string name="auto_focus_off">auto focus off</string>
+    <string name="cam_effects">Εφέ</string>
+    <string name="scenes">Σκηνικά</string>
+    <string name="deletephoto">delete image?</string>
+    <string name="yes">ναι</string>
+    <string name="no">οχι</string>
+    <string name="cancel">Ακιρο</string>
+    <string name="gridview">grid view</string>
+    <string name="crop">κοψιμο</string>
+
+
+    <array name="nav_drawer_icons">
+        <item>@drawable/resicon</item>
+        <item>@drawable/effecticon</item>
+        <item>@drawable/sceneicon</item>
+        <item>@drawable/gui_almalence_settings_flash_auto</item>
+        <item>@drawable/gui_almalence_settings_flash_off</item>
+        <item>@drawable/gui_almalence_settings_flash_on</item>
+        <item>@drawable/gui_almalence_settings_flash_torch</item>
+        <item>@drawable/ic_account_circle_white_24dp</item>
+        <item>@drawable/contacts</item>
+    </array>
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+
+</resources>
