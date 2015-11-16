@@ -13,7 +13,6 @@ public class BucketFiles {
 
     private static ArrayList<File> picturesFileList = new ArrayList<>();
 
-
     public static boolean isPictureFileListEmpty() {
         return picturesFileList.isEmpty();
     }

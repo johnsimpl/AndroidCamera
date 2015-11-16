@@ -8,7 +8,6 @@ import android.widget.ImageView;
 /**
  * Created by abraham on 16/10/2015.
  */
-//// TODO: 1/11/2015 fix bug! some color effect isnt saving
 public class ColorFilters {
 
 

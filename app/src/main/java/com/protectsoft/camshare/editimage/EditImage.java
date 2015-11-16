@@ -391,7 +391,6 @@ public class EditImage extends Activity {
                 });
 
 
-
     }
 
     public void sepia2(View view) {

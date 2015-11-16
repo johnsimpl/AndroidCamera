@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.hardware.Camera;
 import android.hardware.SensorManager;
 import android.media.CamcorderProfile;
@@ -703,8 +702,8 @@ public class MainActivity extends Activity {
     public void imagecapture(View view) {
 
             CameraFeatures.isTakingpicture = true;
-            Button imagebutton = (Button) findViewById(R.id.capturebutton);
-            Button recbutton = (Button) findViewById(R.id.recbutton);
+            View imagebutton = (View) findViewById(R.id.capturebutton);
+            View recbutton = (View) findViewById(R.id.recbutton);
 
             try {
                 imagebutton.setEnabled(false);
@@ -745,8 +744,11 @@ public class MainActivity extends Activity {
             releaseMediaRecorder();
 
             //enable image capture button
-            Button imgbutton = (Button)findViewById(R.id.capturebutton);
+            View imgbutton = (View)findViewById(R.id.capturebutton);
             imgbutton.setEnabled(true);
+
+            TextView rectext = (TextView)findViewById(R.id.recordtext);
+            rectext.setText("");
 
             setRecordVideoButtomImage(false);
 
@@ -765,8 +767,12 @@ public class MainActivity extends Activity {
                 try {
                     mediaRecorder.start();
                     //disable image capture button
-                    Button imgbutton = (Button)findViewById(R.id.capturebutton);
+                    View imgbutton = (View)findViewById(R.id.capturebutton);
                     imgbutton.setEnabled(false);
+
+                    TextView rectext = (TextView)findViewById(R.id.recordtext);
+                    rectext.setText("REC ON:");
+
                     setRecordVideoButtomImage(true);
                 } catch (IllegalStateException ex) {
                     releaseMediaRecorder();
@@ -783,11 +789,8 @@ public class MainActivity extends Activity {
 
 
     private void setRecordVideoButtomImage(boolean isrec) {
-        final Button recbutton = (Button)findViewById(R.id.recbutton);
+        final View recbutton = (View)findViewById(R.id.recbutton);
         if(isrec) {
-
-            Drawable draw = getResources().getDrawable(R.drawable.presence_video_busy);
-            recbutton.setBackgroundDrawable(draw);
             recbutton.setEnabled(false);
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
@@ -801,10 +804,7 @@ public class MainActivity extends Activity {
                    });
                 }
             },3000);
-
         } else {
-            Drawable draw = getResources().getDrawable(R.drawable.presence_video_online);
-            recbutton.setBackgroundDrawable(draw);
             recbutton.setEnabled(false);
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
@@ -942,7 +942,11 @@ public class MainActivity extends Activity {
                                         }
                                         //throwable will be thrown only if cpp/so library fails to load
                                         //in that case process image with java
-                                        MediaFileUtils.rotateImageAndWriteToFile(rotation, data, picturefile, context);
+                                        try {
+                                            MediaFileUtils.rotateImageAndWriteToFile(rotation, data, picturefile, context);
+                                        } catch (Throwable throwable) {
+                                            //in that case abort this picture capture
+                                        }
                                     }
                                 }
                             });
@@ -1129,14 +1133,13 @@ public class MainActivity extends Activity {
         LinearLayout l2 = (LinearLayout)findViewById(R.id.optionsbuttonlayout);
         l2.bringToFront();
 
-        // top right corner
-        //LinearLayout l3 = (LinearLayout)findViewById(R.id.right_options);
-        //l3.bringToFront();
-
         //bottom right
         LinearLayout l4 = (LinearLayout)findViewById(R.id.linearimagepreview);
         l4.bringToFront();
 
+        //recstatus layout botton left
+        LinearLayout recstat = (LinearLayout)findViewById(R.id.recstatus);
+        recstat.bringToFront();
 
     }
 

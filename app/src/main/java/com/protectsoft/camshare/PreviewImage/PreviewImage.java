@@ -41,6 +41,8 @@ public class PreviewImage extends Activity {
 
         Picasso.with(getApplicationContext())
                 .load(currentFile)
+                .resize(850,1200)
+                .centerInside()
                 .memoryPolicy(MemoryPolicy.NO_CACHE)
                 .into(imageView);
 

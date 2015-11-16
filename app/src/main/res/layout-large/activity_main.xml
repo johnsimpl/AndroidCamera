@@ -7,7 +7,6 @@
     tools:context=".MainActivity">
 
 
-
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -22,6 +21,8 @@
             android:layout_gravity="bottom|right"
             android:id="@+id/linearimagepreview"
             >
+
+
             <ImageView
                 android:layout_width="65dp"
                 android:layout_height="65dp"
@@ -39,15 +40,34 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginBottom="55dp"
+            android:id="@+id/recstatus"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ff0000"
+                android:textSize="18dp"
+                android:id="@+id/recordtext"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/linearbottom"
-            android:paddingTop="15dp"
+            android:paddingTop="8dp"
             android:paddingBottom="10dp"
             android:background="#cb030303"
             android:layout_gravity="bottom|center"
             >
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -61,44 +81,44 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/shape"
-                    android:padding="10dp"
-                    android:layout_marginRight="20dp"
+                    android:background="@drawable/circleout"
+                    android:padding="20dp"
+                    android:layout_marginRight="30dp"
                     >
-                    <Button
-                        android:layout_width="60dp"
-                        android:layout_height="50dp"
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:id="@+id/recbutton"
                         android:onClick="recvideo"
                         android:layout_gravity="bottom"
                         android:scaleType="center"
-                        android:background="@drawable/presence_video_online" />
+                        android:background="@drawable/circleinvideo"
+                        />
                 </LinearLayout>
-
-
 
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/shape"
-                    android:padding="10dp"
-                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/circleout"
+                    android:padding="20dp"
+                    android:layout_marginLeft="30dp"
                     >
-                    <Button
-                        android:layout_width="80dp"
-                        android:layout_height="70dp"
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:id="@+id/capturebutton"
                         android:onClick="imagecapture"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="2dp"
+                        android:layout_margin="5dp"
                         android:scaleType="center"
-                        android:background="@drawable/ic_menu_camera" />
+                        android:background="@drawable/circleinpicture"
+                        />
+
                 </LinearLayout>
-                
 
             </LinearLayout>
-
 
         </LinearLayout>
 
@@ -108,12 +128,12 @@
             android:id="@+id/optionsbuttonlayout"
             android:layout_height="wrap_content"
             android:layout_gravity="top|left"
-            android:background="#cb030303"
+            android:background="#17030303"
             >
 
             <Button
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
                 android:background="@drawable/ic_menu_preferences"
                 android:id="@+id/optionbutton"
                 android:onClick="optionclick"
@@ -129,10 +149,10 @@
                 android:text="text"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
-                 />
+                />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:id="@+id/txt2"
@@ -142,9 +162,10 @@
                 android:textColor="#FFFFFF" />
 
             <ImageView
-                android:layout_width="60dp"
+                android:id="@+id/testclick"
+                android:layout_width="55dp"
                 android:onClick="changeCamera"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/camera_switch" />
@@ -152,27 +173,27 @@
             <ImageView
                 android:layout_width="55dp"
                 android:onClick="showFlashOptions"
-                android:layout_height="45dp"
+                android:layout_height="55dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="25dp"
                 android:background="@drawable/gui_almalence_settings_flash_off" />
 
-
         </LinearLayout>
 
 
-        </FrameLayout>
+
+    </FrameLayout>
 
 
 
     <ListView android:id="@+id/list_slidermenu"
-        android:layout_width="240dp"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:choiceMode="singleChoice"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="0dp"
-        android:background="#111"/>
+        android:divider="#6aaff5"
+        android:dividerHeight="1dp"
+        android:background="#9b111111"/>
 
 
 

@@ -9,7 +9,6 @@ import java.io.File;
  */
 public final class Constants {
 
-    public static String accountEmail;
     //the last picture taken to be set as preview at surface view
     public static Bitmap bitmap = null;
 
