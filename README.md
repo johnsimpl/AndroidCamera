@@ -16,7 +16,7 @@ I have tested this app to around 10 devices only.
 * front/rear camSwitch
 * a simple gallery <br>
 <img src="./pics/pic7.jpg" width="300">
-* crop <br>
+* crop/rotate <br>
 <img src="./pics/pic4.jpg" width="300">
 * edit captured pictures <br>
 <img src="./pics/pic2.jpg" width="300">
