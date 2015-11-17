@@ -5,10 +5,6 @@
 <b>DroidCam</b> is an open-source experimental camera app for Android. <br>
 My goal was to build a simply and basic android camera app with as much functionality and extras i can add.<br>
 Other people may found this usefull if they starting from scratch to do something similar.<br>
-I am using this libraries:<br>
-for crop https://github.com/IsseiAoki/SimpleCropView <br>
-and Picasso https://github.com/square/picasso
-<br>
 I have tested this app to around 10 devices only.
 <br>
 ## Features
