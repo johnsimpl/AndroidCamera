@@ -4,11 +4,11 @@ android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
     defaultConfig {
-        applicationId 'com.protectsoft.camshare'
-        minSdkVersion 14
+        applicationId 'com.protectsoft.simplecam'
+        minSdkVersion 15
         targetSdkVersion 21
         versionCode 1
-        versionName "1.0"
+        versionName "1"
 
         ndk {
             moduleName "JniBitmapOperationsLibrary"
@@ -51,11 +51,12 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.android.support:support-v4:21.0.2'
-
-
-    compile 'com.isseiaoki:simplecropview:1.0.8'
+    
+    compile 'com.isseiaoki:simplecropview:1.0.14'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'me.grantland:autofittextview:0.2.1'
 
     testCompile 'junit:junit:4.12'
     compile 'junit:junit:4.12'
+    testCompile "org.mockito:mockito-core:1.9.5"
 }

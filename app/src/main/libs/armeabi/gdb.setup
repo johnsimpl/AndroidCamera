@@ -1,3 +1,0 @@
-set solib-search-path C:/Users/abraham/AndroidStudioProjects/androidcamera/app/src/main/obj/local/armeabi
-source C:/android-ndk-r10e/prebuilt/common/gdb/common.setup
-directory C:/android-ndk-r10e/platforms/android-8/arch-arm/usr/include C:/android-ndk-r10e/sources/cxx-stl/system/include C:/Users/abraham/AndroidStudioProjects/androidcamera/app/src/main/jni

@@ -13,45 +13,45 @@
 extern "C" {
 
 //store
-JNIEXPORT jobject JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniStoreBitmapData(
+JNIEXPORT jobject JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniStoreBitmapData(
         JNIEnv * env, jobject obj, jobject bitmap);
 
 //get
-JNIEXPORT jobject JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniGetBitmapFromStoredBitmapData(
+JNIEXPORT jobject JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniGetBitmapFromStoredBitmapData(
         JNIEnv * env, jobject obj, jobject handle);
 
 //free
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniFreeBitmapData(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniFreeBitmapData(
         JNIEnv * env, jobject obj, jobject handle);
 
 //rotate 90 degrees CCW
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniRotateBitmapCcw90(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniRotateBitmapCcw90(
         JNIEnv * env, jobject obj, jobject handle);
 
 
 //rotate 90 degrees CW
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniRotateBitmapCw90(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniRotateBitmapCw90(
         JNIEnv * env, jobject obj, jobject handle);
 
 
 //rotate 180 degrees
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniRotateBitmap180(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniRotateBitmap180(
         JNIEnv * env, jobject obj, jobject handle);
 
 
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniFlipBitmapHorizontal(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniFlipBitmapHorizontal(
         JNIEnv * env, jobject obj, jobject handle);
 
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniFlipBitmapVertical(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniFlipBitmapVertical(
         JNIEnv * env, jobject obj, jobject handle);
 
 //scale using Bilinear Interpolation
-JNIEXPORT void JNICALL JJava_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniScaleNNBitmap(
+JNIEXPORT void JNICALL JJava_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniScaleNNBitmap(
         JNIEnv * env, jobject obj, jobject handle, uint32_t newWidth,
         uint32_t newHeight);
 
 //crop
-JNIEXPORT void JNICALL Java_app_com_camshare_jni_bitmapoperations_JniBitmapHolder_jniCropBitmap(
+JNIEXPORT void JNICALL Java_app_com_simplecam_jni_bitmapoperations_JniBitmapHolder_jniCropBitmap(
         JNIEnv * env, jobject obj, jobject handle, uint32_t left,
         uint32_t top, uint32_t right, uint32_t bottom);
 
@@ -90,7 +90,7 @@ void convertIntToArgb(uint32_t pixel, ARGB* argb)
 
 
 /**rotates the inner bitmap data by 90 degrees counter clock wise*/ //
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniRotateBitmapCcw90(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniRotateBitmapCcw90(
         JNIEnv * env, jobject obj, jobject handle)
 {
         JniBitmap* jniBitmap = (JniBitmap*) env->GetDirectBufferAddress(handle);
@@ -119,7 +119,7 @@ JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBit
 
 
 /**rotates the inner bitmap data by 90 degrees clock wise*/ //
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniRotateBitmapCw90(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniRotateBitmapCw90(
         JNIEnv * env, jobject obj, jobject handle)
 {
         JniBitmap* jniBitmap = (JniBitmap*) env->GetDirectBufferAddress(handle);
@@ -148,7 +148,7 @@ JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBit
 
 
 /**rotates the inner bitmap data by 180 degrees */ //
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniRotateBitmap180(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniRotateBitmap180(
         JNIEnv * env, jobject obj, jobject handle)
 {
         JniBitmap* jniBitmap = (JniBitmap*) env->GetDirectBufferAddress(handle);
@@ -190,7 +190,7 @@ JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBit
 }
 
 /**free bitmap*/ //
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniFreeBitmapData(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniFreeBitmapData(
         JNIEnv * env, jobject obj, jobject handle)
 {
         JniBitmap* jniBitmap = (JniBitmap*) env->GetDirectBufferAddress(handle);
@@ -203,7 +203,7 @@ JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBit
 
 
 /**restore java bitmap (from JNI data)*/ //
-JNIEXPORT jobject JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniGetBitmapFromStoredBitmapData(
+JNIEXPORT jobject JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniGetBitmapFromStoredBitmapData(
         JNIEnv * env, jobject obj, jobject handle)
 {
         JniBitmap* jniBitmap = (JniBitmap*) env->GetDirectBufferAddress(handle);
@@ -251,7 +251,7 @@ JNIEXPORT jobject JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_Jni
 
 
 /**store java bitmap as JNI data*/ //
-JNIEXPORT jobject JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniStoreBitmapData(
+JNIEXPORT jobject JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniStoreBitmapData(
         JNIEnv * env, jobject obj, jobject bitmap)
 {
         AndroidBitmapInfo bitmapInfo;
@@ -292,7 +292,7 @@ JNIEXPORT jobject JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_Jni
 
 
 /**crops the bitmap within to be smaller. note that no validations are done*/ //
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniCropBitmap(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniCropBitmap(
         JNIEnv * env, jobject obj, jobject handle, uint32_t left, uint32_t top,
         uint32_t right, uint32_t bottom)
 {
@@ -319,7 +319,7 @@ JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBit
 }
 
 /**scales the image using the fastest, simplest algorithm called "nearest neighbor" */ //
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniScaleNNBitmap(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniScaleNNBitmap(
         JNIEnv * env, jobject obj, jobject handle, uint32_t newWidth,
         uint32_t newHeight)
 {
@@ -365,7 +365,7 @@ JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBit
 * 789    987
 *
 * */ //
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniFlipBitmapHorizontal(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniFlipBitmapHorizontal(
         JNIEnv * env, jobject obj, jobject handle)
 {
         JniBitmap* jniBitmap = (JniBitmap*) env->GetDirectBufferAddress(handle);
@@ -397,7 +397,7 @@ JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBit
  * 789    123
  *
  * */ //
-JNIEXPORT void JNICALL Java_com_protectsoft_camshare_jni_bitmapoperations_JniBitmapHolder_jniFlipBitmapVertical(
+JNIEXPORT void JNICALL Java_com_protectsoft_simplecam_jni_bitmapoperations_JniBitmapHolder_jniFlipBitmapVertical(
         JNIEnv * env, jobject obj, jobject handle)
 {
         JniBitmap* jniBitmap = (JniBitmap*) env->GetDirectBufferAddress(handle);
