@@ -106,57 +106,6 @@ public class MediaFileUtils {
 
 
 
-    /**
-     *
-     * @param filename the pictures filename
-     * @return File for the downloaded picture to be saved
-     */
-    public static File getOutputFileForS3Download(String filename) {
-
-        File mediastorage = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),"camshare");
-        if(!mediastorage.exists()) {
-            if(!mediastorage.mkdirs()) {
-                return null;
-            }
-        }
-
-        File mediafile = new File(mediastorage.getPath()+File.separator+filename);
-
-        return mediafile;
-
-    }
-
-
-    public static File getOutputFileForS3Download(String[] filename) {
-
-        File mediastorage = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),"camshare");
-        if(!mediastorage.exists()) {
-            if(!mediastorage.mkdirs()) {
-                return null;
-            }
-        }
-
-        File mediafile = new File(mediastorage.getPath()+File.separator+filename[1]);
-
-       if(!mediafile.exists()) {
-           return mediafile;
-       }
-
-        try {
-            Thread.sleep(501);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-       File file = getOutputMediaFile(1);
-
-        filename[1] = file.getName();
-
-        return getOutputFileForS3Download(filename);
-
-    }
-
-
 
     /**
      *  two possible Throwables!  OutOfMemoryError Exception(when dalvik runs out of memory because of big bitmaps data) ->subclass of Error<br>
