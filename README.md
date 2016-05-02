@@ -7,6 +7,8 @@ My goal was to build a simply and basic android camera app with as much function
 Other people may found this usefull if they starting from scratch to do something similar.<br>
 I have tested this app to around 10 devices only.
 <br>
+google play app link <br>
+https://play.google.com/store/apps/details?id=com.protectsoft.simplecam <br>
 ## Features
 * resolutions <br>
 <img src="./pics/pic1.jpg" width="300">
